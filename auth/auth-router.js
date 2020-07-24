@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const authModel = require('./authModel')
 const bcryptjs = require('bcryptjs')
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
+const { isValid } = require('./isValidMiddleware');
 
 
 //JWT Function for making the token 4 register
@@ -24,8 +25,8 @@ router.post('/register', (req, res) => {
   const credentials = req.body
   // console.log(credentials)
 
-//if (isValid(credentials))
-  if (credentials) {
+if (isValid(credentials)) {
+  // if (credentials) {
       //hash and slash that password
       const hash = bcryptjs.hashSync(credentials.password, 8)
       credentials.password = hash
