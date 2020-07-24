@@ -26,12 +26,49 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Differences between using _sessions_ or _JSON Web Tokens_ for authentication.
 
+sessions & cookies are primarly used for mobile applications now a days and is used to store information to do many things
+from authentication to storing data for temp use. When you close your browser your sessions/cookies will be wiped.
+
+Web tokens currently are the preffered way to handle and store data since the client reduces the server burden load wise.
+JSON is Stateless. JSON web tokens are stateless because claims are stored client-side, rather than in the server's memory. Authentication can occur locally, instead of per request, where requests have to go through the server's database, or similar locations.
+
 2. What does `bcrypt` do to help us store passwords in a secure manner.
+   it is a libary that hashes our passwords.
+   (very lowlevel encryption)
 
 3. How are unit tests different from integration and end-to-end testing.
 
-4. How _Test Driven Development_ changes the way we write applications and tests.
+Unit Tests -- mainly meant for backend
 
+meant to be run very often --> need to be performent to run fast
+- usually pure functions
+- related to a specific function only and nothing else and 
+testing if its returning what it should properly
+- super simple test that runs fast in isolation
+-a particular part of the code is doing it's thing
+
+Inegration (endpoints in terms of backend)
+
+testing specific components 
+
+- if I hit my API, is this dropdown properly rendering
+End-to-end testing  --> (testing the model/helpers)
+
+difficult and expensive to write
+- testing the full functionality from landing on your webpage to the completion of what you want the website to do:
+ -if it properly renders things, deletes, add , etc
+
+
+4. How _Test Driven Development_ changes the way we write applications and tests.
+How _Test Driven Development_ changes the way we write applications and tests.
+    TDD is a technique where you must first write a test that fails before you write a new functional code
+    Test-Driven Development Process:
+ - Add a Test.
+ - Run all tests and see if the new one fails.
+ - Write some code.
+ - Run tests and Refactor code.
+ - Repeat.
+ 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
 ## Instructions
